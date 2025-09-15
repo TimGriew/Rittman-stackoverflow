@@ -1,7 +1,7 @@
 SELECT
     id,
     owner_user_id,
-    parent_id,
+    parent_id AS parent_question_id,
     creation_date,
     body,
     score,
