@@ -3,7 +3,7 @@
 -- Split tag_group string into an array
 WITH tag_group_arrays AS (
     SELECT
-        tag_group_id,
+        id AS tag_group_id,
         SPLIT(tag_group, '|') AS tag_array
     FROM {{ ref('dim_tag_groups')}}
 ),
