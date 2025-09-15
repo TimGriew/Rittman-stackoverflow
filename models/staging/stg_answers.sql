@@ -8,3 +8,4 @@ SELECT
     comment_count
 
 FROM {{ source('stackoverflow', 'posts_answers') }}
+WHERE EXTRACT(YEAR FROM creation_date) >= {{ var('earliest_year_of_interest') }}

@@ -13,3 +13,4 @@ SELECT
     tags
 
 FROM {{ source('stackoverflow', 'posts_questions') }}
+WHERE EXTRACT(YEAR FROM creation_date) >= {{ var('earliest_year_of_interest') }}

@@ -24,6 +24,9 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
+# Set dbt variable for filtering questions and answers to only recent years
+vars:
+  earliest_year_of_interest: 2020
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
