@@ -1,16 +1,15 @@
-select
+SELECT
     id,
+    owner_user_id,
+    creation_date,
     title,
     body,
-    creation_date,
-    owner_user_id,
-    parent_id,
     accepted_answer_id,
-    view_count,
     answer_count,
     comment_count,
+    view_count,
     favorite_count,
+    score,
     tags
 
-
-from {{ source('stackoverflow', 'posts_questions') }}
+FROM {{ source('stackoverflow', 'posts_questions') }}

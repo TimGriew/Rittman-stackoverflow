@@ -4,7 +4,6 @@ sources:
     database: bigquery-public-data
     schema: stackoverflow
     tables:
-      - name: stackoverflow_posts
       - name: posts_questions
       - name: posts_answers
       - name: comments
