@@ -2,8 +2,6 @@ SELECT
     stg.id,
     stg.owner_user_id,
     stg.creation_date,
-    stg.title,
-    stg.body,
     CASE 
         WHEN stg.answer_count > 0 THEN 1
         ELSE 0
