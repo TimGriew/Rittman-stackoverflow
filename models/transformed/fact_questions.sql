@@ -4,6 +4,14 @@ SELECT
     stg.creation_date,
     stg.title,
     stg.body,
+    CASE 
+        WHEN stg.answer_count > 0 THEN 1
+        ELSE 0
+    END AS is_answered,
+    CASE 
+        WHEN stg.accepted_answer_id IS NOT NULL THEN 1
+        ELSE 0
+    END AS has_accepted_answer,
     stg.accepted_answer_id,
     stg.answer_count,
     stg.comment_count,

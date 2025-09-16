@@ -8,7 +8,10 @@ SELECT
     answer_count,
     comment_count,
     view_count,
-    favorite_count,
+    CASE 
+        WHEN favorite_count IS NOT NULL THEN favorite_count
+        ELSE 0
+    END AS favorite_count,
     score,
     tags
 

@@ -14,9 +14,10 @@ WITH tag_pairs AS (
 tag_pairs_with_id AS (
     SELECT 
         *,
+        CONCAT(tag1, '|', tag2) AS tag_pair,
         ROW_NUMBER() OVER (ORDER BY tag_group_id, tag1_id, tag2_id) AS id,
         DENSE_RANK() OVER (ORDER BY tag1_id, tag2_id) AS tag_pair_id
     FROM tag_pairs
 )
 
-SELECT id, tag_group_id, tag_pair_id, tag1_id, tag1, tag2_id, tag2 FROM tag_pairs_with_id
+SELECT id, tag_group_id, tag_pair_id, tag_pair, tag1_id, tag1, tag2_id, tag2 FROM tag_pairs_with_id
